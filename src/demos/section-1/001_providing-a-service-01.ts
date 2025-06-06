@@ -27,7 +27,7 @@ const InMemoryCache = Cache.of({
 const FileSystemCache = Cache.of({
   lookup: (key) =>
     Effect.tryPromise({
-      try: () => fs.readFile(`src/demos/session-1/cache/${key}`, "utf-8"),
+      try: () => fs.readFile(`src/demos/section-1/cache/${key}`, "utf-8"),
       catch: () => new CacheMissError({ message: `Failed to read file for cache key: "${key}"` })
     })
 })
